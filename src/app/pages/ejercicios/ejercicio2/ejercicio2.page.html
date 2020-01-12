@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Ejercicio 2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-instrucciones [numEj]="2" [instrucciones]="instrucciones"></app-instrucciones>
+  <ion-card>
+    <ion-card-header>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Ingresa x</ion-label>
+        <ion-input [(ngModel)]="x" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ingresa k</ion-label>
+        <ion-input [(ngModel)]="k" type="number"></ion-input>
+      </ion-item>
+      <ion-button (click)="calculate()" expand="full" fill="solid" color="primary">Calcular</ion-button>
+      <ion-text color="danger" padding>
+        <h2 text>Resultado: {{res}}</h2>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

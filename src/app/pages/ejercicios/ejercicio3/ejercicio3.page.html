@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Ejercicio 3</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-instrucciones [instrucciones]='instrucciones' [numEj]='3'></app-instrucciones>
+  <ion-card>
+    <ion-card-header>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Ingresa el numero de filas</ion-label>
+        <ion-input [(ngModel)]="n" type="number"></ion-input>
+      </ion-item>
+      <ion-button (click)="pyramid()" expand="full" fill="solid" color="primary">Dibujar</ion-button>
+      <ion-text color="danger" padding>
+        <ion-text color="primary" *ngFor="let row of pyramidStr" text-center>
+          <pre>{{row}}</pre>
+        </ion-text>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Ejercicio 5</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-instrucciones [instrucciones]='instrucciones' [numEj]='5'></app-instrucciones>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ordenamiento de números</ion-card-title>
+      <ion-card-subtitle>Ingresa números separados por un espacio</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Ingresa números</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
+    </ion-card-content>
+
+
+  </ion-card>
+
+</ion-content>

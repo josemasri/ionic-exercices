@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Ejercicio 1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <app-instrucciones [numEj]="1" [instrucciones]="instrucciones"></app-instrucciones>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Solución</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Numeros separados por espacio</ion-label>
+        <ion-textarea [(ngModel)]="text" required></ion-textarea>
+      </ion-item>
+      <ion-button (click)="calculate()" expand="full" fill="solid">Calcular</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Positivos</ion-label>
+        <ion-input [ngModel]="positivos" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Negativos</ion-label>
+        <ion-input [ngModel]="negativos" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Ceros</ion-label>
+        <ion-input [ngModel]="ceros" type="number"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

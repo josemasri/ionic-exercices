@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Tarea 1 Interfaces de Usuario
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Portada -->
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Trimestre 19O</ion-card-subtitle>
+      <ion-card-title>Interfaces de Usuario</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Nombre: <span>Jose Masri Salame</span></p>
+      <p>Tarea 1</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Ejercicios -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ejercicios</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1,1]; let i = index">
+        <ion-item (click)="ejercicio(i + 1)">
+          <ion-label>Ejercicio {{i+1}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

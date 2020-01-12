@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Ejercicio 5</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-instrucciones [instrucciones]='instrucciones' [numEj]='5'></app-instrucciones>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Media y Desviación Estandar</ion-card-title>
+      <ion-card-subtitle>Ingresa numeros separados por un espacio</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Ingresa los numeros</ion-label>
+        <ion-textarea [(ngModel)]="numerosText" required></ion-textarea>
+      </ion-item>
+      <ion-button expand="full" fill="outline" (click)="calcular()">Calcular</ion-button>
+      <p>Media: {{media.toFixed(4)}}</p>
+      <p>Desviacion Estandar: {{desviacion.toFixed(4)}}</p>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
