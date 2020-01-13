@@ -1,9 +1,84 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>ejercicio9</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Ejercicio 9</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <app-instrucciones [instrucciones]='instrucciones' [numEj]='9'></app-instrucciones>
+
+  <ion-card *ngIf="TT > 0">
+    <ion-card-content>
+      <div text-center>
+        <ion-text color="primary">
+          <h2>Ventas mayores a $1000 </h2>
+        </ion-text>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">
+              <p>Número de Ventas: {{A}}</p>
+            </ion-col>
+            <ion-col size="6">
+              <p>Total vendido: {{T1 | currency}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div text-center>
+        <ion-text color="primary">
+          <h2>Ventas entre $500 y $1000 </h2>
+        </ion-text>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">
+              <p>Número de Ventas: {{B}}</p>
+            </ion-col>
+            <ion-col size="6">
+              <p>Total vendido: {{T2 | currency}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div text-center>
+        <ion-text color="primary">
+          <h2>Ventas menores o iguales a $500 </h2>
+        </ion-text>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">
+              <p>Número de Ventas: {{C}}</p>
+            </ion-col>
+            <ion-col size="6">
+              <p>Total vendido: {{T3 | currency}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <p text-center>Total de ventas: {{TT | currency}}</p>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-content>
+      <ion-button expand="full" fill="solid" (click)="ventas.push(0)">
+        <ion-icon slot="start" name="add"></ion-icon>
+        Agregar Venta
+      </ion-button>
+      <ion-item *ngFor="let item of ventas; let i = index">
+        <ion-buttons slot="end">
+          <ion-button (click)="ventas.splice(i, 1)">
+            <ion-icon slot="icon-only" name="close"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-label position="stacked">Monto de la venta {{i+1}}</ion-label>
+        <ion-input type="number" [(ngModel)]="ventas[i]" required>$ </ion-input>
+      </ion-item>
+      <ion-button *ngIf="ventas.length > 0" expand="full" fill="solid" (click)="calcular()">Calcular</ion-button>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

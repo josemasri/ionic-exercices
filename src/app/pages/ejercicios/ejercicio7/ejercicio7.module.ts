@@ -1,3 +1,4 @@
+import { ComponentsModule } from './../../../components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,8 +14,9 @@ import { Ejercicio7Page } from './ejercicio7.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     Ejercicio7PageRoutingModule
   ],
   declarations: [Ejercicio7Page]
 })
-export class Ejercicio7PageModule {}
+export class Ejercicio7PageModule { }

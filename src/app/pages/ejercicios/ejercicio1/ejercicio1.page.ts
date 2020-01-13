@@ -17,6 +17,8 @@ export class Ejercicio1Page implements OnInit {
   positivos = 0;
   negativos = 0;
   ceros = 0;
+  mayor = - 1 / 0;
+  menor = 1 / 0;
 
   ngOnInit() {
     this.text = '';
@@ -42,6 +44,12 @@ export class Ejercicio1Page implements OnInit {
         this.positivos++;
       } else {
         this.ceros++;
+      }
+      if (numeroInt > this.mayor) {
+        this.mayor = numeroInt;
+      }
+      if (numeroInt < this.menor) {
+        this.menor = numeroInt;
       }
     });
   }

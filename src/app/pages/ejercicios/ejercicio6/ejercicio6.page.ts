@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class Ejercicio6Page implements OnInit {
 
   numerosText = '';
+  numeros: number[] = [];
   numerosAs: number[] = [];
   numerosDe: number[] = [];
 
@@ -18,6 +19,25 @@ export class Ejercicio6Page implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ordenar() {
+    this.numeros = this.numerosText.split(' ').map(item => {
+      return parseFloat(item);
+    });
+    this.ordenarAs(this.numeros);
+    this.ordenarDe(this.numeros);
+    console.log(this.numerosAs, this.numerosDe);
+  }
+
+  ordenarAs(data: number[]) {
+    this.numerosAs = [...data];
+    this.numerosAs.sort((a, b) => a - b);
+  }
+
+  ordenarDe(data: number[]) {
+    this.numerosDe = [...data];
+    this.numerosDe.sort((a, b) => b - a);
   }
 
 }

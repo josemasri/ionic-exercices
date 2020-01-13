@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { Ejercicio11PageRoutingModule } from './ejercicio11-routing.module';
 
 import { Ejercicio11Page } from './ejercicio11.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     Ejercicio11PageRoutingModule
   ],
   declarations: [Ejercicio11Page]
 })
-export class Ejercicio11PageModule {}
+export class Ejercicio11PageModule { }

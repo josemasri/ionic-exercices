@@ -1,0 +1,165 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Problema Final</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <app-instrucciones [instrucciones]='instrucciones' [numEj]='13'></app-instrucciones>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Fecha</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label>Selecciona una fecha</ion-label>
+              <ion-datetime [(ngModel)]="fechaInput" display-format="DD MM YYYY" pickerFormat="DD MM YYYY" required>
+              </ion-datetime>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-button expand="full" fill="solid" (click)="abreviada()">
+              <ion-icon name="calendar" slot="start"></ion-icon>
+              Abreviada
+            </ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button expand="full" fill="solid" color="secondary" (click)="extendida()">
+              <ion-icon name="calendar" slot="start"></ion-icon>
+              Extendida
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="fechaAbreviadaStr !== ''">
+          <ion-col size="12">
+            <p>{{fechaAbreviadaStr}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="fechaExtendidaStr !== ''">
+          <ion-col size="12">
+            <p>{{fechaExtendidaStr}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Empleado</ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">Nombre</ion-label>
+              <ion-input required [(ngModel)]="empleadoInput.nombre"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">Salario/dia</ion-label>
+              <ion-input required type="number" [(ngModel)]="empleadoInput.salario"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label>Fecha de Nacimiento</ion-label>
+              <ion-datetime [(ngModel)]="empleadoInput.fecha" display-format="DD MM YYYY" pickerFormat="DD MM YYYY"
+                required>
+              </ion-datetime>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6">
+            <ion-button expand="full" fill="solid" (click)="displayEmpleado()">
+              <ion-icon name="man" slot="start"></ion-icon>
+              Mostrar
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="empleadoStr !== ''">
+          <ion-col size="12">
+            <p>{{empleadoStr}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ingeniero</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">Nombre</ion-label>
+              <ion-input required [(ngModel)]="ingeInput.nombre"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">Salario/dia</ion-label>
+              <ion-input required type="number" [(ngModel)]="ingeInput.salario"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label>Fecha de Nacimiento</ion-label>
+              <ion-datetime [(ngModel)]="ingeInput.fecha" display-format="DD MM YYYY" pickerFormat="DD MM YYYY"
+                required>
+              </ion-datetime>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating">Departamento</ion-label>
+              <ion-input [(ngModel)]="ingeInput.departamento" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6">
+            <ion-button expand="full" fill="solid" (click)="displayInge()">
+              <ion-icon name="man" slot="start"></ion-icon>
+              Mostrar
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="ingenieroStr !== ''">
+          <ion-col size="12">
+            <p>{{ingenieroStr}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

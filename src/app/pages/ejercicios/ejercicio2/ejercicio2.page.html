@@ -23,7 +23,7 @@
         <ion-input [(ngModel)]="k" type="number"></ion-input>
       </ion-item>
       <ion-button (click)="calculate()" expand="full" fill="solid" color="primary">Calcular</ion-button>
-      <ion-text color="danger" padding>
+      <ion-text *ngIf="k !== 0 && x !== 0" color="secondary" padding>
         <h2 text>Resultado: {{res}}</h2>
       </ion-text>
     </ion-card-content>

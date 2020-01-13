@@ -21,6 +21,7 @@ export class Ejercicio2Page implements OnInit {
   }
 
   calculate() {
+    this.res = 0;
     for (let i = 0; i <= this.k; i++) {
       this.res += Math.pow(this.x, i);
     }

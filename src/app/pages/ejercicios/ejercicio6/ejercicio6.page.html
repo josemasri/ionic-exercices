@@ -3,12 +3,12 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Ejercicio 5</ion-title>
+    <ion-title class="ion-text-center">Ejercicio 6</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <app-instrucciones [instrucciones]='instrucciones' [numEj]='5'></app-instrucciones>
+  <app-instrucciones [instrucciones]='instrucciones' [numEj]='6'></app-instrucciones>
 
   <ion-card>
     <ion-card-header>
@@ -19,10 +19,16 @@
     <ion-card-content>
       <ion-item>
         <ion-label position="floating">Ingresa números</ion-label>
-        <ion-textarea></ion-textarea>
+        <ion-textarea [(ngModel)]="numerosText"></ion-textarea>
       </ion-item>
+      <ion-button expand="full" fill="solid" (click)="ordenar()">Ordenar</ion-button>
+      <ion-text *ngIf="numerosAs.length > 0" color="primary">
+        <h3>Numeros ordenados de forma ascendente</h3>
+        <span *ngFor="let element of numerosAs">{{element}},</span>
+        <h3>Numeros ordenados de forma descendente</h3>
+        <span *ngFor="let element2 of numerosDe">{{element2}},</span>
+      </ion-text>
     </ion-card-content>
-
 
   </ion-card>
 

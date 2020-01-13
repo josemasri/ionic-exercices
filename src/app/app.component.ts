@@ -75,6 +75,11 @@ export class AppComponent {
       title: 'Ejercicio 12',
       url: '/ejercicio12',
       icon: 'code'
+    },
+    {
+      title: 'Problema Final',
+      url: '/problema-final',
+      icon: 'code'
     }
   ];
 

@@ -1,9 +1,194 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>ejercicio12</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Ejercicio 12</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <app-instrucciones [instrucciones]='instrucciones' [numEj]='12'></app-instrucciones>
+  <!-- Suma -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Suma: (a + b<i>i</i>) + (c + d<i>i</i>)</ion-card-title>
+    </ion-card-header>
 
+    <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">a</ion-label>
+              <ion-input [(ngModel)]="sumaData.a" type="number" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">b</ion-label>
+              <ion-input [(ngModel)]="sumaData.b" type="number" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <h2 text-center>+</h2>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">c</ion-label>
+              <ion-input [(ngModel)]="sumaData.c" type="number" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">d</ion-label>
+              <ion-input [(ngModel)]="sumaData.d" type="number" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="sumaData.res">
+          <ion-col size="12">
+            <p text-center>Resultado = {{sumaData.res.a}} + {{sumaData.res.b}}<i>i</i> </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button expand="full" fill="solid" (click)="suma()">
+        <ion-icon name="calculator" slot="start"></ion-icon>
+        Sumar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Suma -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Resta: (a + b<i>i</i>) - (c + d<i>i</i>)</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">a</ion-label>
+              <ion-input [(ngModel)]="restaData.a" type="number" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">b</ion-label>
+              <ion-input [(ngModel)]="restaData.b" type="number" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <h2 text-center>-</h2>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">c</ion-label>
+              <ion-input [(ngModel)]="restaData.c" type="number" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">d</ion-label>
+              <ion-input [(ngModel)]="restaData.d" type="number" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="restaData.res">
+          <ion-col size="12">
+            <p text-center>Resultado = {{restaData.res.a}} + {{restaData.res.b}}<i>i</i> </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button expand="full" fill="solid" (click)="resta()">
+        <ion-icon name="calculator" slot="start"></ion-icon>
+        Restar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+  <!-- Multiplicar -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Multiplica: (a + b<i>i</i>)(c + d<i>i</i>)</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">a</ion-label>
+              <ion-input [(ngModel)]="multiplicacionData.a" type="number" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">b</ion-label>
+              <ion-input [(ngModel)]="multiplicacionData.b" type="number" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <h2 text-center>X</h2>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">c</ion-label>
+              <ion-input [(ngModel)]="multiplicacionData.c" type="number" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">d</ion-label>
+              <ion-input [(ngModel)]="multiplicacionData.d" type="number" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="multiplicacionData.res">
+          <ion-col size="12">
+            <p text-center>Resultado = {{multiplicacionData.res.a}} + {{multiplicacionData.res.b}}<i>i</i> </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button expand="full" fill="solid" (click)="multiplicacion()">
+        <ion-icon name="calculator" slot="start"></ion-icon>
+        Multiplicar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+  <!-- Módulo -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Módulo: |(a + b<i>i</i>)|</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">a</ion-label>
+              <ion-input [(ngModel)]="moduloData.a" type="number" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">b</ion-label>
+              <ion-input [(ngModel)]="moduloData.b" type="number" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="moduloData.res">
+          <ion-col size="12">
+            <p text-center>Resultado = {{moduloData.res.toFixed(4)}} </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button expand="full" fill="solid" (click)="modulo()">
+        <ion-icon name="calculator" slot="start"></ion-icon>
+        Módulo
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
